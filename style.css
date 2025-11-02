@@ -1,0 +1,9 @@
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+/* Style pour la liste de mots pour éviter le décalage de layout */
+#wordList {
+	min-height: 150px;
+	/* Hauteur minimale pour éviter que tout ne saute */
+}

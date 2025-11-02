@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jeu de Mots Rapide</title>
+	<!-- Chargement de Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Police Inter -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+	<div
+		class="bg-gray-800 p-6 sm:p-10 rounded-2xl shadow-2xl w-full max-w-2xl mx-auto text-center border border-gray-700">
+		<h1 class="text-3xl sm:text-4xl font-bold text-cyan-400 mb-6">Word Game</h1>
+
+		<div class="space-y-6">
+			<div
+				class="flex flex-col sm:flex-row justify-around items-center bg-gray-900 p-6 rounded-xl space-y-4 sm:space-y-0">
+				<div>
+					<div class="text-sm font-medium text-gray-400 uppercase">Lettre</div>
+					<div id="letterDisplay" class="text-8xl font-black text-white" style="line-height: 1;">-</div>
+				</div>
+				<div class="w-24 h-24 rounded-full flex items-center justify-center border-4 border-gray-700">
+					<div id="timerDisplay" class="text-5xl font-bold text-cyan-400">30</div>
+				</div>
+			</div>
+			<div id="messageDisplay" class="text-lg text-gray-300 h-6">Appuyez sur "Commencer" !</div>
+
+			<input type="text" id="wordInput"
+				class="w-full p-4 text-xl bg-gray-700 border-2 border-gray-600 rounded-lg text-white placeholder-gray-500 text-center transition duration-200 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:border-cyan-500"
+				placeholder="Tapez votre mot et appuyez sur Entrée" disabled>
+
+			<div id="langSelector" class="flex justify-center gap-6 py-4">
+				<label class="flex items-center text-lg text-gray-300 cursor-pointer">
+					<input type="radio" name="language" value="fr"
+						class="mr-2 h-5 w-5 text-cyan-500 focus:ring-cyan-400 border-gray-600 bg-gray-700" checked>
+					Français
+				</label>
+				<label class="flex items-center text-lg text-gray-300 cursor-pointer">
+					<input type="radio" name="language" value="en"
+						class="mr-2 h-5 w-5 text-cyan-500 focus:ring-cyan-400 border-gray-600 bg-gray-700">
+					Anglais
+				</label>
+			</div>
+
+			<button id="startButton"
+				class="w-full bg-cyan-500 text-gray-900 text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition duration-200 ease-in-out hover:bg-cyan-400 focus:outline-none focus:ring-4 focus:ring-cyan-300">
+				Commencer la partie
+			</button>
+
+			<div class="bg-gray-900 p-6 rounded-xl text-left">
+				<div class="flex justify-between items-center mb-4">
+					<h2 class="text-xl font-semibold text-white">Mots trouvés :</h2>
+					<div class="text-xl font-bold text-cyan-400">
+						Score : <span id="scoreDisplay">0</span>
+					</div>
+				</div>
+
+				<div id="wordList"
+					class="h-40 overflow-y-auto bg-gray-800 p-4 rounded-lg border border-gray-700 text-gray-200 flex flex-wrap gap-2 content-start">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Script JavaScript -->
+	<script src="logic.js"></script>
+</body>
+
+</html>

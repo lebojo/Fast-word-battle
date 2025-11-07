@@ -158,10 +158,10 @@ async function handleWordInput(event) {
 	}
 
 	// --- Vérifications locales d'abord ---
-	if (!wordUpper.startsWith(currentLetter)) {
+	if (!wordUpper.startsWith(currentLetter.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
 		flashInputError();
 		messageDisplay.textContent = `"${wordRaw}" ne commence pas par "${currentLetter}" !`;
-		wordInput.value = ''; // Vider le champ si erreur
+		wordInput.value = ""; // Vider le champ si erreur
 		return;
 	}
 
